@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="vue.js"></script>
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <template v-if="contador < 7">
+    <button @click="contador++">adicionar produto : {{contador}}</button>
+    </template>
+    <template v-else="contador == 7 ">
+      <p>Não é possível adicionar mais de 7 produtos por favor remova</p>
+      {{contador}}
+      <button @click="contador--">Retirar produtos</button>
+    </template>
+  </div>
+
+
+  <script>
+    const vm = new Vue({
+      el : '#app',
+      data : {
+        contador : 0 ,
+      },
+    })
+    
+  </script>
+  
+</body>
+</html>
